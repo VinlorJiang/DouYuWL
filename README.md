@@ -1,4 +1,4 @@
-![DinPay logo](http://oq3ai2jdz.bkt.clouddn.com/DPApplePaySDK%E5%85%AC%E5%8F%B8logo.png)
+![DinPay logo](http://a3.qpic.cn/psb?/V11RDE5l45xcCs/eBXD7tZLqfMQLGkjTuGL*y0h.yvmb8NM2M5SHoUaQNE!/m/dFYBAAAAAAAAnull&bo=PAA7AAAAAAADByU!&rf=photolist&t=5)
 # DPApplePaySDK
 * 使用智付 ApplePay 支付 SDK 可快速、方便集成苹果官方的 ApplePay 功能。
 
