@@ -25,4 +25,13 @@
 7.1 类方法
 7.2 系统类扩充构造函数：没有返回值，以convenience开头，必须调用一个设计构造函数
 7.3 通过在类型后面添加 “ =“” ”创建方法默认参数，如：string = “”，
-下一节课：8.首页布局界面分析
+
+## 8.界面分析：
+8.1 label可以根据文本计算宽度，但是button不是很方便计算
+8.2 封装PageTitleView
+8.3 封装PageContentView
+8.4 处理PageTitleView与PageContentView逻辑
+8.5 重写了init函数必须重写init with coder 
+8.6 swift没有隐式转换
+
+下一节课：9
