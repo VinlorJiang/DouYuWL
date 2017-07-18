@@ -15,4 +15,9 @@
 1）下载ipa资源包，使用pp助手：应用游戏-》正版应用-》搜索斗鱼-》下载-》下载管理可以查看下载信息-》打开ipa包-》打开方式-》归档使用工具-》.app包-》右键显示包内容
 2）打开Assets.car包资源工具，github上搜cartool，解压car，运行该工具，Edit Scheme-》Arguments-》Arguments Pass On Lanuch 下面+-》将Assets.car拖进输入框，然后将将要存放资源到路径拖到下面输入框
 
-下次准备：项目基本设置
+## 6.项目框架搭建
+6.1 图标必须有60x60的；
+6.2 文件夹目录划分；
+6.3 storyboard refactor ，iOS 9.0以上
+6.4 适配iOS 8.0
+下一节课：设置首页导航栏
