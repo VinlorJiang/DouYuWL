@@ -35,3 +35,7 @@
 8.6 swift没有隐式转换
 
 下一节课：9
+
+# 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
+下一节课：9swift
+下一节课：9
