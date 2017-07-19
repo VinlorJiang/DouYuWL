@@ -37,5 +37,6 @@
 下一节课：9
 
 # 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
+# 2.在添加PageTitleView的时候，文本都没有显示出来的原因是没有调整UIScrollView的内边距，设置： automaticallyAdjustsScrollViewInsets = false ，就可以解决
 下一节课：9swift
 下一节课：9
