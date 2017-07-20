@@ -17,13 +17,15 @@ class HomeViewController: UIViewController {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView
         }()
     
     fileprivate lazy var pageContentView : PageContentView = {
         // 1.计算frame
         let contentY = kStatusBarH + kNavigationH + kTitleViewH
-        let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: kScreenH - contentY)
+        let contentH = kScreenH - kStatusBarH - kNavigationH - kTitleViewH
+        let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
         // 2.添加子控制器
         var childVcs = [UIViewController]()
         for i in 0...4 {
@@ -33,9 +35,9 @@ class HomeViewController: UIViewController {
         }
         
         // 3.
-        let contenView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
-        
-        return contenView
+        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        contentView.delegate = self
+        return contentView
     }()
     
     // MARK:- 系统回调函数
@@ -76,5 +78,18 @@ extension HomeViewController {
         let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", highlightedImageName: "Image_scan_click", size: size)
         navigationItem.rightBarButtonItems = [historyItem,searchItem,qrcodeItem];
         
+    }
+}
+
+// MARK:- 遵守PageTitleViewDelegate协议
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(_ titleView : PageTitleView, selectedIndex index : Int) {
+        pageContentView.setCurrentIndx(index)
+    }
+}
+// MARK:- 遵守PageContentViewDelegate协议
+extension HomeViewController : PageContentViewDelegate {
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithScroll(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
