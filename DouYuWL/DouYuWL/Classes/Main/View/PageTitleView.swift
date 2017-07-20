@@ -16,7 +16,8 @@ class PageTitleView: UIView {
     
     // MARK:- 定义属性
     fileprivate var titles : [String]
-
+    fileprivate var currentIndex : Int = 0
+    
     // MARK:- 懒加载属性
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -117,10 +118,31 @@ extension PageTitleView {
     }
 }
 
-// Mark:- 监听label到点击事件
+// Mark:- 监听label的点击事件
 extension PageTitleView {
     @objc fileprivate func titleLabelClick(_ tapGes : UITapGestureRecognizer) {
+        // 1.获取当前label
+        guard let currentLabel = tapGes.view as? UILabel else { return }
         
+        // 2.如果重复点击同一个Title 就直接返回
+        if currentIndex == currentLabel.tag {
+            return
+        }
+        
+        // 3.获取之前的Label
+        let previousLabel = titleLabels[currentIndex]
+        
+        // 4.切换文字的颜色
+        currentLabel.textColor = UIColor(r: kSelectedColor.0, g: kSelectedColor.1, b: kSelectedColor.2)
+        previousLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)
+        
+        // 5.保存最新的label下标
+        currentIndex = currentLabel.tag
+        
+        // 6.更新滑块的x值
+        let scrollLineX = CGFloat(currentIndex) * scrollLine.frame.width
+        scrollLine.frame.origin.x = scrollLineX
+
     }
 }
 

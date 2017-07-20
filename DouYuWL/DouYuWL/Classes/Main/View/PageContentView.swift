@@ -75,9 +75,25 @@ extension PageContentView {
 // MARK:- 遵守UICollectionViewDataSource
 extension PageContentView : UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return childVcs.count
+    }
     
-    func collectionView(<#parameters#>) -> <#return type#> {
-        <#function body#>
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // 1.创建cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCellID, for: indexPath)
+        
+        
+        // 2.给cell设置内容
+        for view in cell.contentView.subviews {
+            view.removeFromSuperview()
+        }
+        
+        let childVc = childVcs[(indexPath as NSIndexPath).item]
+        childVc.view.frame = cell.contentView.bounds
+        cell.contentView.addSubview(childVc.view)
+        
+        return cell
     }
 }
 // MARK:- 遵守UICollectionViewDelegate
