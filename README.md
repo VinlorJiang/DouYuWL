@@ -34,8 +34,13 @@
 8.5 重写了init函数必须重写init with coder 
 8.6 swift没有隐式转换
 
-下一节课：11
+下一节课：14
 
 # 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
 # 2.在添加PageTitleView的时候，文本都没有显示出来的原因是没有调整UIScrollView的内边距，设置： automaticallyAdjustsScrollViewInsets = false ，就可以解决
+# 3.颜色渐变的设置逻辑：
+## 3.1使用RGB,定义一个常量元组分别来保存sourceColor与targetColor；
+## 3.2当sourceColor变到targetColor时：用sourceColor的RGB分别加上targetColor的RGB的进度；
+## 3.3当targetColor变到sourceColor时：用targetColor的RGB分别减去sourceColor的RGB的进度；
+# 3.当下面collectionView滚动后再去点击PageTitleView的label时，原label颜色没有改变到normal状态，是代理方法没有将目标的index赋值给当前label的 index
 
