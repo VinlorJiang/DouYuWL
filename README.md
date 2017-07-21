@@ -35,8 +35,12 @@
 8.6 swift没有隐式转换
 
 ## 15.
-15.1 在xib或者storyboard中，选择某张图片然后按等于号“=”与command就会根据图片的大小来显示
-下一节课：16
+  15.1 在xib或者storyboard中，选择某张图片然后按等于号“=”与command就会根据图片的大小来显示
+## 18:
+###   18.1 swift不再支持静态库了，只支持动态库；
+###   18.2 在终端命令下安装第三方库文件，而又不需要更新本地库的话可以在后面加 “--no-repo-update”，完整命令如：pod isntall --no-repo-update
+###   18.3 测试网络请求http://httpbin.org
+
 
 # 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
 # 2.在添加PageTitleView的时候，文本都没有显示出来的原因是没有调整UIScrollView的内边距，设置： automaticallyAdjustsScrollViewInsets = false ，就可以解决
@@ -46,3 +50,4 @@
 ## 3.3当targetColor变到sourceColor时：用targetColor的RGB分别减去sourceColor的RGB的进度；
 # 3.当下面collectionView滚动后再去点击PageTitleView的label时，原label颜色没有改变到normal状态，是代理方法没有将目标的index赋值给当前label的 index
 
+# 下一节课：19.MVVM设计模式
