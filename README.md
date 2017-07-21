@@ -40,6 +40,7 @@
 ###   18.1 swift不再支持静态库了，只支持动态库；
 ###   18.2 在终端命令下安装第三方库文件，而又不需要更新本地库的话可以在后面加 “--no-repo-update”，完整命令如：pod isntall --no-repo-update
 ###   18.3 测试网络请求http://httpbin.org
+###   18.4 UICollectionView，如果没有实现代理方法的话，会有报错，先实现代理方法在查看是否还有报错
 
 
 # 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
