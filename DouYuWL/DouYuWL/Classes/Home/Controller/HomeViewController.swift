@@ -28,7 +28,8 @@ class HomeViewController: UIViewController {
         let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
         // 2.添加子控制器
         var childVcs = [UIViewController]()
-        for i in 0...4 {
+        childVcs.append(RecommendViewController())
+        for i in 0...2 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.randomColor()
             childVcs.append(vc)
