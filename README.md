@@ -52,6 +52,6 @@
 ## 3.1使用RGB,定义一个常量元组分别来保存sourceColor与targetColor；
 ## 3.2当sourceColor变到targetColor时：用sourceColor的RGB分别加上targetColor的RGB的进度；
 ## 3.3当targetColor变到sourceColor时：用targetColor的RGB分别减去sourceColor的RGB的进度；
-# 3.当下面collectionView滚动后再去点击PageTitleView的label时，原label颜色没有改变到normal状态，是代理方法没有将目标的index赋值给当前label的 index
-
+# 3.当下面collectionView滚动后再去点击PageTitleView的label时，原label颜色没有改变到normal状态，是代理方法没有将目标的index赋值给当前label的 index。
+# 4.在提交git的时候提示“The local repository is out of date”，解决方案：cd到当前项目目录，输入：git pull --rebase xxx master，然后git push即可。
 # 下一节课：19.MVVM设计模式
