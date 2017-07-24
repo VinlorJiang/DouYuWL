@@ -63,6 +63,9 @@
                 <constraint firstItem="Rn6-aM-YmJ" firstAttribute="top" secondItem="Wor-aV-oNY" secondAttribute="bottom" constant="5" id="zEb-X6-ikk"/>
             </constraints>
             <size key="customSize" width="50" height="69"/>
+            <connections>
+                <outlet property="roomNameLabel" destination="tex-9t-d6L" id="exl-qN-so3"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="44"/>
         </collectionViewCell>
     </objects>

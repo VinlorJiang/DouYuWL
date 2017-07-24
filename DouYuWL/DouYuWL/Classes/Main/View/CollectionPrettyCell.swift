@@ -8,8 +8,12 @@
 
 import UIKit
 
-class CollectionPrettyCell: UICollectionViewCell {
+class CollectionPrettyCell: CollectionBaseCell {
 
+    // MARK:- 空间属性
+    
+    @IBOutlet weak var cityBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

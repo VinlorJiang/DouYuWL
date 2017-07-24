@@ -66,6 +66,12 @@
                 <constraint firstItem="Som-Ap-vMC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vLJ-1r-1jt"/>
                 <constraint firstItem="9w5-UC-pdR" firstAttribute="top" secondItem="Som-Ap-vMC" secondAttribute="bottom" constant="5" id="xo5-1E-TQ5"/>
             </constraints>
+            <connections>
+                <outlet property="cityBtn" destination="Pe8-jk-RTX" id="ogX-pe-CZ8"/>
+                <outlet property="iconImageView" destination="Som-Ap-vMC" id="0Ab-Kv-yEa"/>
+                <outlet property="nickNameLabel" destination="9w5-UC-pdR" id="ez6-9m-fHo"/>
+                <outlet property="onlineBtn" destination="Njh-Fu-k45" id="sNv-so-l7h"/>
+            </connections>
             <point key="canvasLocation" x="58" y="53.5"/>
         </collectionViewCell>
     </objects>

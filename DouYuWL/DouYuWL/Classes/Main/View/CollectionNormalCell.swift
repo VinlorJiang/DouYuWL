@@ -8,8 +8,11 @@
 
 import UIKit
 
-class CollectionNormalCell: UICollectionViewCell {
+class CollectionNormalCell: CollectionBaseCell {
 
+    // MARK:- 空间属性
+    @IBOutlet weak var roomNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
