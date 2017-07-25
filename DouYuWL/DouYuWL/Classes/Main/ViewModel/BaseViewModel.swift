@@ -7,12 +7,13 @@
 //
 
 import UIKit
+
 class BaseViewModel {
-    lazy var anchorGroupModel : [AnchorGroupModel] = [AnchorGroupModel]()
+    lazy var anchorGroupModels : [AnchorGroupModel] = [AnchorGroupModel]()
 }
 
 extension BaseViewModel {
-    func loadAnchorData(isGroupData : Bool, URLString : String, parameters : [String : Any]? = nil, finishedCallback : () -> ()) {
+    func loadAnchorData(isGroupData : Bool, URLString : String, parameters : [String : Any]? = nil, finishedCallback : @escaping () -> ()) {
         NetWorkTools.requestData(.get, URLString: URLString, parameters: parameters) { (result) in
             // 1.对界面进行处理
             guard let resultDic = result as? [String : Any] else { return }
@@ -22,17 +23,17 @@ extension BaseViewModel {
             if isGroupData {
                 // 2.1.遍历数组中的字典
                 for dic in dataArray {
-                    self.anchorGroupModel.append(AnchorGroupModel(dic:dic))
+                    self.anchorGroupModels.append(AnchorGroupModel(dict:dic))
                 }
             } else {
                 // 2.1.创建组
                 let group = AnchorGroupModel()
                 // 2.2.遍历dataArray的所有的字典
                 for dic in dataArray {
-                    group.anchors.append(AnchorGroupModel(dic : dic))
+                    group.anchors.append(AnchorModel(dict : dic))
                 }
                 // 2.3.将group,添加到anchorGroups
-                self.anchorGroupModel.append(group)
+                self.anchorGroupModels.append(group)
             }
             // 3.完成回调
             finishedCallback()

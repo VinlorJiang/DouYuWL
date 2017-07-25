@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnchorGroupModel: NSObject {
+class AnchorModel: NSObject {
     /// 房间ID
     var room_id : Int = 0
     

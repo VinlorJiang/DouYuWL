@@ -13,9 +13,14 @@ class CollectionNormalCell: CollectionBaseCell {
     // MARK:- 空间属性
     @IBOutlet weak var roomNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK:- 定义模型属性
+    override var anchor : AnchorModel? {
+        didSet {
+            super.anchor = anchor
+            
+            roomNameLabel.text = anchor?.room_name
+        }
     }
+    
 
 }
