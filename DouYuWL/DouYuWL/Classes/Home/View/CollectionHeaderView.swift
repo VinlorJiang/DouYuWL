@@ -9,10 +9,13 @@
 import UIKit
 
 class CollectionHeaderView: UICollectionViewCell {
+    
+    // MARK:- 控件属性
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var moreBtn: UIButton!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    // MARK:- 定义模型属性
+    
+    
 }

@@ -58,6 +58,11 @@
                 <constraint firstAttribute="bottom" secondItem="xDp-DP-ZBO" secondAttribute="bottom" constant="11" id="csV-PP-NrZ"/>
                 <constraint firstItem="gjr-yp-GrW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="q43-cj-vYl"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="xDp-DP-ZBO" id="cHc-eI-zRu"/>
+                <outlet property="moreBtn" destination="wKW-jq-jFF" id="nOt-jw-4gs"/>
+                <outlet property="titleLabel" destination="smW-99-eh4" id="5mV-Zm-pg9"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>

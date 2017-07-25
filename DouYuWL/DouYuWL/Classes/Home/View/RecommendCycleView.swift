@@ -17,7 +17,7 @@ class RecommendCycleView: UIView {
     @IBOutlet weak var pageControl: UIPageControl!
     
     // MARK:- 定义属性
-    var cycleTimer : Timer
+    var cycleTimer : Timer？
     var cycleModels : [CycleModel]? {
         didSet {
             // 1.刷新collectionView
@@ -72,5 +72,46 @@ extension RecommendCycleView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellID, for: indexPath) as! CollectionCycleCell
         
+        cell.cycyleModel = cycleModels![(indexPath as NSIndexPath).item % cycleModels!.count]
+        
+        return cell
+    }
+    
+}
+// MARK:- 遵守UICollectionView的代理协议
+extension RecommendCycleView : UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 1.获取滚动的偏移量
+        let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
+        
+        // 2.计算pageControl的currentIndex
+        pageControl.currentPage = Int(offsetX / scrollView.bounds.width) % (cycleModels?.count ?? 1)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        addCycleTimer()
+    }
+}
+// MARK:- 对定时器的操作方法
+extension RecommendCycleView {
+    fileprivate func addCycleTimer() {
+        cycleTimer = Timer(timeInterval: 3.0, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer, forMode: RunLoopMode.commonModes)
+    }
+    fileprivate func removeCycleTimer() {
+        cycleTimer?.invalidate()
+        cycleTimer = nil
+    }
+    @objc fileprivate func scrollToNext() {
+        // 1.获取滚动的偏移量
+        let currentOffsetX = collectionView.contentOffset.x
+        let offsetX = currentOffsetX + collectionView.bounds.width
+        
+        // 2.滚动该位置
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
     }
 }
