@@ -42,13 +42,57 @@ extension RecommendViewController {
 
 // MARK:- 请求数据
 extension RecommendViewController {
-    override func loadData()
+    override func loadData() {
     // 0.给父类中的ViewModel进行赋值
     baseVM = recommendVM
     
     // 1.请求推荐数据
+        recommendVM.requestData {
+            // 1.展示推荐数据
+            self.collectionView.reloadData()
+            
+            // 2.将数据传递给GameView
+            var groups = self.recommendVM.anchorGroupModels
+            
+            // 2.1.移除前两组数据
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            // 2.2.添加更多组
+            let moreGroup = AnchorGroupModel()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            
+            
+            // 3.数据请求完成
+            self.loadDataFinished()
+        }
     
-    // 1.展示推荐数据
+    // 2.请求轮播数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+        }
 }
 
+}
 
+extension RecommendViewController : UICollectionViewDelegateFlowLayout {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1 {
+            let prettyCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
+            
+            prettyCell.anchor = recommendVM.anchorGroupModels[indexPath.section].anchors[indexPath.item]
+            
+            return prettyCell
+        } else {
+            return super.collectionView(collectionView, cellForItemAt: indexPath)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            return CGSize(width: kNormalItemW, height: kPrettyItemH)
+        }
+        return CGSize(width: kNormalItemW, height: kNormalItemH)
+    }
+}

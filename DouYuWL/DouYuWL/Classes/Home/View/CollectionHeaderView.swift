@@ -16,6 +16,19 @@ class CollectionHeaderView: UICollectionViewCell {
     @IBOutlet weak var moreBtn: UIButton!
 
     // MARK:- 定义模型属性
+    var group : AnchorGroupModel? {
+        didSet {
+             titleLabel.text = group?.tag_name
+            iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_normal")
+        }
+    }
     
     
+}
+
+// MARK:- 快速创建方法
+extension CollectionHeaderView {
+    class func collectionHeaderView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
+    }
 }
