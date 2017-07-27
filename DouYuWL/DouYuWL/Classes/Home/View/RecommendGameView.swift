@@ -13,15 +13,16 @@ private let kGameCellID = "kGameCellID"
 private let kEdgeInsetMargin : CGFloat = 10
 
 class RecommendGameView: UIView {
-
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     var gameModel : [BaseGameModel]? {
         didSet {
             collectionView.reloadData()
         }
     }
+
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     // MARK:-  系统回调
     override func awakeFromNib() {

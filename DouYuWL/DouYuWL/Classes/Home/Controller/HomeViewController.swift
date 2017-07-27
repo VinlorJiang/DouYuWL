@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
         // 2.添加子控制器
         var childVcs = [UIViewController]()
-        childVcs.append(RecommendViewController())
+//        childVcs.append(RecommendViewController())
         childVcs.append(GameViewController())
         for i in 0...1 {
             let vc = UIViewController()

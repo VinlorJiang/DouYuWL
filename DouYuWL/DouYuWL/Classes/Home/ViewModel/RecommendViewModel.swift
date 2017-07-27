@@ -28,7 +28,8 @@ extension RecommendViewModel {
         
         // 3.请求第一部分推荐数据
         dGroup.enter()
-        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
+        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
+            
             
             // 1.将result转成字典类型
             guard let resultDict = result as? [String : NSObject] else { return }
