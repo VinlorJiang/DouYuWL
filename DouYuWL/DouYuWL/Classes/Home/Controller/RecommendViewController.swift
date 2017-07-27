@@ -20,8 +20,6 @@ class RecommendViewController: BaseAnchorViewController {
         cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
     }()
-    
-   
 
 }
 // MARK:- 设置界面内容
