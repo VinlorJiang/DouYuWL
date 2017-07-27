@@ -113,5 +113,24 @@ extension BaseAnchorViewController : UICollectionViewDataSource {
 }
 // MARK:- 遵守UICollectionView 的代理协议
 extension BaseAnchorViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let anchor = baseVM.anchorGroupModels[indexPath.section].anchors[indexPath.item]
+        
+        anchor.isVertical == 0 ? pushNormalRoomVc() : presentShowRoomVc()
+        
+    }
     
+    private func presentShowRoomVc() {
+        let showRoomVc = RoomShowViewController()
+        
+        present(showRoomVc, animated: true, completion: nil)
+        
+    }
+    
+    private func pushNormalRoomVc() {
+        let normalRoomVc = RoomNormalViewController()
+        
+        navigationController?.pushViewController(normalRoomVc, animated: true)
+        
+    }
 }

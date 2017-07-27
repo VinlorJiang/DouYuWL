@@ -21,6 +21,8 @@
 		816910A51F29D8EB0090AA79 /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 816910A41F29D8EB0090AA79 /* RecommendGameView.xib */; };
 		816910A81F29D96C0090AA79 /* CollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816910A61F29D96C0090AA79 /* CollectionGameCell.swift */; };
 		816910A91F29D96C0090AA79 /* CollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 816910A71F29D96C0090AA79 /* CollectionGameCell.xib */; };
+		816910AF1F29F7700090AA79 /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816910AE1F29F7700090AA79 /* RoomNormalViewController.swift */; };
+		816910B11F29F7940090AA79 /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816910B01F29F7940090AA79 /* RoomShowViewController.swift */; };
 		8175B56E1F26F5DF008D55EF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8175B56D1F26F5DF008D55EF /* BaseViewController.swift */; };
 		8175B5721F26F964008D55EF /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8175B5711F26F964008D55EF /* BaseAnchorViewController.swift */; };
 		8175B5741F272218008D55EF /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8175B5731F272218008D55EF /* RecommendViewModel.swift */; };
@@ -71,6 +73,8 @@
 		816910A41F29D8EB0090AA79 /* RecommendGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
 		816910A61F29D96C0090AA79 /* CollectionGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionGameCell.swift; sourceTree = "<group>"; };
 		816910A71F29D96C0090AA79 /* CollectionGameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionGameCell.xib; sourceTree = "<group>"; };
+		816910AE1F29F7700090AA79 /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomNormalViewController.swift; path = ../../Main/RoomNormalViewController.swift; sourceTree = "<group>"; };
+		816910B01F29F7940090AA79 /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
 		8175B56D1F26F5DF008D55EF /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8175B5711F26F964008D55EF /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		8175B5731F272218008D55EF /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +161,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		816910AA1F29F7550090AA79 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				816910AB1F29F7550090AA79 /* Controller */,
+				816910AC1F29F7550090AA79 /* Model */,
+				816910AD1F29F7550090AA79 /* View */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		816910AB1F29F7550090AA79 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				816910AE1F29F7700090AA79 /* RoomNormalViewController.swift */,
+				816910B01F29F7940090AA79 /* RoomShowViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		816910AC1F29F7550090AA79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		816910AD1F29F7550090AA79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		817E03FE1F25FFB800F83F96 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +214,7 @@
 		81C7E1741F1EDF3B00948E66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				816910AA1F29F7550090AA79 /* Room */,
 				81C7E1781F1EDF3B00948E66 /* Main */,
 				81C7E1761F1EDF3B00948E66 /* Home */,
 				81C7E1771F1EDF3B00948E66 /* Live */,
@@ -560,6 +598,8 @@
 				8112C28E1F1F4DA300915559 /* UIColor-Extension.swift in Sources */,
 				8175B5761F272410008D55EF /* NSDate-Extension.swift in Sources */,
 				81C2C7111F220BF30005E55F /* CollectionNormalCell.swift in Sources */,
+				816910B11F29F7940090AA79 /* RoomShowViewController.swift in Sources */,
+				816910AF1F29F7700090AA79 /* RoomNormalViewController.swift in Sources */,
 				8175B5741F272218008D55EF /* RecommendViewModel.swift in Sources */,
 				81C2C71D1F220CBC0005E55F /* CollectionHeaderView.swift in Sources */,
 				81C7E1B01F1F056000948E66 /* UIBarButtonItem-Extention.swift in Sources */,
