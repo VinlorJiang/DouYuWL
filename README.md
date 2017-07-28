@@ -45,6 +45,7 @@
 ## 21: 
     21.1. ??的使用，当需要传入的是一个确定类型而传入的是一个可选类型时候，可以用两个问号后面加一个类型为空的默认值，如： A ?? "hello", 表示当A为空的时候就使用hello；
     21.2 as！强转类型
+## 37.逻辑分支if如果里面嵌套有if会使代码的可读性变差，所以使用guard...else... 来代替if。
 
 # 1.CGPointZero -> CGPoint.zero,CGPointZero在 swift 3不可用
 # 2.在添加PageTitleView的时候，文本都没有显示出来的原因是没有调整UIScrollView的内边距，设置： automaticallyAdjustsScrollViewInsets = false ，就可以解决
