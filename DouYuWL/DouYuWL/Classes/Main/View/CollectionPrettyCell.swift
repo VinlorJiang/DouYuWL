@@ -14,9 +14,13 @@ class CollectionPrettyCell: CollectionBaseCell {
     
     @IBOutlet weak var cityBtn: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+  
+    override var anchor : AnchorModel? {
+        didSet {
+           super.anchor = anchor
+            
+            cityBtn.setTitle(anchor?.anchor_city, for: UIControlState())
+        }
     }
 
 }

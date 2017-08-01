@@ -6,6 +6,12 @@
 //  Copyright © 2017年 apple. All rights reserved.
 //
 
+/*
+ 1> 请求0/1数组,并转成模型对象
+ 2> 对数据进行排序
+ 3> 显示的HeaderView中内容
+ */
+
 import UIKit
 
 class RecommendViewModel : BaseViewModel {
@@ -28,8 +34,7 @@ extension RecommendViewModel {
         
         // 3.请求第一部分推荐数据
         dGroup.enter()
-        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
-            
+        NetWorkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
             
             // 1.将result转成字典类型
             guard let resultDict = result as? [String : NSObject] else { return }

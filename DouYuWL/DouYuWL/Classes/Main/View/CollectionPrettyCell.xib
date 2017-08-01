@@ -28,15 +28,6 @@
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智付电子支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w5-UC-pdR">
-                        <rect key="frame" x="0.0" y="170" width="177" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="cFe-NK-X3N"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Som-Ap-vMC">
                         <rect key="frame" x="0.0" y="0.0" width="182" height="165"/>
                     </imageView>
@@ -51,6 +42,15 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="智付电子支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w5-UC-pdR">
+                        <rect key="frame" x="0.0" y="170" width="177" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="cFe-NK-X3N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
@@ -69,7 +69,7 @@
             <connections>
                 <outlet property="cityBtn" destination="Pe8-jk-RTX" id="ogX-pe-CZ8"/>
                 <outlet property="iconImageView" destination="Som-Ap-vMC" id="0Ab-Kv-yEa"/>
-                <outlet property="nickNameLabel" destination="9w5-UC-pdR" id="ez6-9m-fHo"/>
+                <outlet property="nickNameLabel" destination="9w5-UC-pdR" id="Cya-Hp-9qB"/>
                 <outlet property="onlineBtn" destination="Njh-Fu-k45" id="sNv-so-l7h"/>
             </connections>
             <point key="canvasLocation" x="58" y="53.5"/>

@@ -28,7 +28,7 @@ class BaseAnchorViewController: BaseViewController {
     // MARK:- 定义属性
     var baseVM : BaseViewModel!
     
-    lazy var collectionView : UICollectionView = {
+    lazy var collectionView : UICollectionView = { [unowned self] in
         // 1.创建布局layout
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: kNormalItemW, height: kNormalItemH)

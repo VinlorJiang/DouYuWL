@@ -64,7 +64,8 @@
             </constraints>
             <size key="customSize" width="50" height="69"/>
             <connections>
-                <outlet property="roomNameLabel" destination="tex-9t-d6L" id="exl-qN-so3"/>
+                <outlet property="nickNameLabel" destination="tex-9t-d6L" id="dFb-UE-dpy"/>
+                <outlet property="roomNameLabel" destination="Rn6-aM-YmJ" id="QMz-9n-8qD"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="44"/>
         </collectionViewCell>

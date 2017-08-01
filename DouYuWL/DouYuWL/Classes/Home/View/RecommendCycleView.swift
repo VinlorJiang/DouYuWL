@@ -23,8 +23,8 @@ class RecommendCycleView: UIView {
             pageControl.numberOfPages = cycleModels?.count ?? 0
             
             // 3. 默认滚动到中间某个位置
-            let indexPath = NSIndexPath(item: (cycleModels?.count ?? 0) * 20, section: 0)
-            collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+            let indexPath = IndexPath(item: (cycleModels?.count ?? 0) * 10, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
             
             // 4. 添加定时器
             removeCycleTimer()
@@ -36,18 +36,19 @@ class RecommendCycleView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // MARK: 系统回调函数
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // 设置该控件不随着父控件的拉伸而拉伸
-        autoresizingMask = UIViewAutoresizing(rawValue: 0)
+        autoresizingMask = UIViewAutoresizing()
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
         // 注册cell
         
-        collectionView.register(UINib(nibName: "CollectionViewCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellID)
-        //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCycleCellID)
+        collectionView.register(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellID)
+       
         
     }
     override func layoutSubviews() {
@@ -56,11 +57,11 @@ class RecommendCycleView: UIView {
         // 设置collectionView的layout
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = collectionView.bounds.size
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.scrollDirection = .horizontal
-        collectionView.isPagingEnabled = true
-        collectionView.showsHorizontalScrollIndicator = false
+//        layout.minimumLineSpacing = 0
+//        layout.minimumInteritemSpacing = 0
+//        layout.scrollDirection = .horizontal
+//        collectionView.isPagingEnabled = true
+//        collectionView.showsHorizontalScrollIndicator = false
     }
 }
 
@@ -73,21 +74,21 @@ extension RecommendCycleView {
 extension RecommendCycleView : UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (self.cycleModels?.count ?? 0) * 200
+        return (self.cycleModels?.count ?? 0) * 10000
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellID, for: indexPath) as! CollectionCycleCell
-        let cycleModel = cycleModels![indexPath.item % cycleModels!.count]
-        cell.cyleModel = cycleModel
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.orange
+        cell.cycleModel = cycleModels![indexPath.item % cycleModels!.count]
+//        cell.cyleModel = cycleModel
+//        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.orange
         return cell
         
     }
     
 }
 
-// MARK:- 遵守UICollectionView的数据源协议
+// MARK:- 遵守UICollectionView的代理协议
 extension RecommendCycleView : UICollectionViewDelegate
 {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
